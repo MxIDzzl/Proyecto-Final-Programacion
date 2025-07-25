@@ -7,11 +7,8 @@ import java.awt.*;
 public class LoginView extends JPanel {
     private final JTextField txtUsuario;
     private final JPasswordField txtPassword;
-    private final LoginController loginController;
 
-    public LoginView() {
-        //creando una instancia del controlador
-        loginController = new LoginController();
+    public LoginView(LoginController loginController) {
         //Configuracion basica de la ventana
         setSize(300, 400);
         setLayout(new GridBagLayout());
@@ -53,11 +50,7 @@ public class LoginView extends JPanel {
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
         add(btnRegistrar, gbc);
         btnIngreso.addActionListener(e -> {
-            if (loginController.validarUsuario(txtUsuario.getText(), new String(txtPassword.getPassword()))) {
-                System.out.println("El usuario es correcto");
-            } else {
-                System.out.println("El usuario es incorrecto");
-            }
+            loginController.validarLogin(txtUsuario.getText(), new String(txtPassword.getPassword()));
         });
     }
 }
