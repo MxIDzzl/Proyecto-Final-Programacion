@@ -6,13 +6,5 @@ public class LoginController {
 
     public boolean validarUsuario(String usuario,String password){
         return usuario.equals(usuarioCorrecto) && password.equals(passwordCorrecto);
-
-    //        if(usuario.equals(usuarioCorrecto) && password.equals(passwordCorrecto)) {
-    //            return true;
-    //        } else {
-    //            return false;
-    //        }
-
-
     }
 }
