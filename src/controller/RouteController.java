@@ -29,6 +29,7 @@ public class RouteController {
         public void mostrarMenu(){
             MenuView view = new MenuView();
             mainFrame.setContentPane(view);
+            mainFrame.revalidate();
             mainFrame.repaint();
         }
 }
