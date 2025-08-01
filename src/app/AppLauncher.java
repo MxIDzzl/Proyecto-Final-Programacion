@@ -23,7 +23,7 @@ public class AppLauncher {
 
             //Nueva instancia
             RouteController router = new RouteController(frame);
-            router.mostrarLogin();
+            router.mostrarUsuarios();
 
             frame.setVisible(true);
         });

@@ -2,6 +2,7 @@ package controller;
 
 import UI.LoginView;
 import UI.MenuView;
+import UI.UsuariosView;
 import com.sun.tools.javac.Main;
 import model.LoginModel;
 
@@ -28,6 +29,13 @@ public class RouteController {
         }
         public void mostrarMenu(){
             MenuView view = new MenuView();
+            mainFrame.setContentPane(view);
+            mainFrame.revalidate();
+            mainFrame.repaint();
+        }
+
+        public void mostrarUsuarios(){
+            UsuariosView view = new UsuariosView();
             mainFrame.setContentPane(view);
             mainFrame.revalidate();
             mainFrame.repaint();
