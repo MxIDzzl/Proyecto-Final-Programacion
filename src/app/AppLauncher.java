@@ -17,6 +17,8 @@ public class AppLauncher {
             //Configuracion del frame
             JFrame frame = new JFrame("LoginApp");
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.setSize(300, 400);
+            frame.setResizable(false);
             frame.setLocationRelativeTo(null);
 
             //Nueva instancia
