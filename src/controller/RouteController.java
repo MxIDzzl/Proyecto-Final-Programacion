@@ -30,6 +30,8 @@ public class RouteController {
         mainFrame.setContentPane(view);
         mainFrame.revalidate();
         mainFrame.repaint();
+        mainFrame.pack();
+        mainFrame.setLocationRelativeTo(null);
 
     }
     public void mostrarUsuarios(){

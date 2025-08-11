@@ -16,14 +16,12 @@ public class AppLauncher {
         SwingUtilities.invokeLater(() ->{
             //Configuracion del frame
             JFrame frame = new JFrame("LoginApp");
-            frame.setSize(380, 260);
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setLocationRelativeTo(null);
-            frame.setResizable(false);
 
             //Nueva instancia
             RouteController router = new RouteController(frame);
-            router.mostrarUsuarios();
+            router.mostrarLogin();
 
             frame.setVisible(true);
         });
