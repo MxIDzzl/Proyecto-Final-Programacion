@@ -18,7 +18,7 @@ public class UsuariosView extends JPanel {
 
     public UsuariosView(){
         // Aumentamos la altura para que no se vea tan rectangular
-        setPreferredSize(new Dimension(1000, 800));
+        setPreferredSize(new Dimension(1300, 400));
 
         JPanel panelPrincipal = new JPanel(new BorderLayout(10,10));
         panelPrincipal.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
