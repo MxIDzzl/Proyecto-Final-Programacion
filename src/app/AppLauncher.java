@@ -16,7 +16,7 @@ public class AppLauncher {
         SwingUtilities.invokeLater(() ->{
             //Configuracion del frame
             JFrame frame = new JFrame("LoginApp");
-            frame.setSize(300, 400);
+            frame.setSize(380, 260);
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setLocationRelativeTo(null);
             frame.setResizable(false);
