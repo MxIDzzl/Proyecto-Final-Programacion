@@ -107,6 +107,12 @@ public class MenuView extends JPanel {
             case "clientes":
                 router.mostrarClientes();
                 break;
+            case "calendario":
+                router.mostrarCalendario();
+                break;
+            case "dietas":
+                router.mostrarDietas();
+                break;
             case "logout":
                 confirmarLogout();
                 break;

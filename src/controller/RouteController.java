@@ -45,6 +45,16 @@ public class RouteController {
         new ClientesController(clienteModel, vista, this);
         cambiarVista(vista, 1000, 600);
     }
+    public void mostrarCalendario() {
+        CalendarioView vista = new CalendarioView();
+        new CalendarioController(new CalendarioModel(), vista, this);
+        cambiarVista(vista, 1000, 600);
+    }
+    public void mostrarDietas() {
+        DietasView vista = new DietasView();
+        new DietaController(new DietaModel(), vista, this);
+        cambiarVista(vista, 1000, 600);
+    }
 
     private void cambiarVista(JPanel vista, int ancho, int alto) {
         frame.setContentPane(vista);
