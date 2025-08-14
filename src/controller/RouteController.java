@@ -55,6 +55,11 @@ public class RouteController {
         new DietaController(new DietaModel(), vista, this);
         cambiarVista(vista, 1000, 600);
     }
+    public void mostrarComidas() {
+        ComidaView vista = new ComidaView();
+        new ComidaController(new ComidaModel(), vista, this);
+        cambiarVista(vista, 1100, 600);
+    }
 
     private void cambiarVista(JPanel vista, int ancho, int alto) {
         frame.setContentPane(vista);
