@@ -12,14 +12,16 @@ public class UsuariosView extends JPanel {
     public JButton btnRegistrar;
     public JButton btnEliminar;
     public JButton btnActualizar;
+    public JButton btnRegresar;
 
     public JTable tablausuarios;
     public DefaultTableModel modeloTabla;
 
     public UsuariosView(){
         // Aumentamos la altura para que no se vea tan rectangular
-        setPreferredSize(new Dimension(1000, 750));
+        setPreferredSize(new Dimension(600, 150));
         setBackground(new Color(240, 240, 240));
+        JPanel container = new JPanel();
 
         JPanel panelPrincipal = new JPanel(new BorderLayout(10,10));
         panelPrincipal.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -65,6 +67,9 @@ public class UsuariosView extends JPanel {
         btnActualizar = crearBoton("Actualizar");
         gbc.gridx = 0; gbc.gridy = 5; gbc.gridwidth = 2;
         formularioPanel.add(btnActualizar, gbc);
+        btnRegresar = crearBoton("Regresar");
+        gbc.gridx = 0; gbc.gridy = 6; gbc.gridwidth = 2;
+        formularioPanel.add(btnRegresar, gbc);
 
         // Tabla con altura de filas más grande
         modeloTabla = new DefaultTableModel(new Object[]{"ID","Nombre","Contraseña"},0);

@@ -10,10 +10,12 @@ import java.awt.*;
 public class UsuariosController {
     private UsuarioModel modelo;
     private UsuariosView vista;
+    private RouteController router;
 
-    public UsuariosController(UsuarioModel modelo, UsuariosView vista){
+    public UsuariosController(UsuarioModel modelo, UsuariosView vista, RouteController router){
         this.modelo = modelo;
         this.vista = vista;
+        this.router = router;
 
         configurarListeners();
         actualizarTabla();
@@ -30,6 +32,9 @@ public class UsuariosController {
 
         vista.btnActualizar.addActionListener(e -> {
             actualizarUsuario();
+        });
+        vista.btnRegresar.addActionListener(e -> {
+            router.mostrarMenu();
         });
 
         // Permite hacer clic en la tabla para cargar datos

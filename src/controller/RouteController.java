@@ -1,47 +1,55 @@
 package controller;
 
-import model.LoginModel;
-import model.UsuarioModel;
-import UI.LoginView;
-import UI.MenuView;
-import UI.UsuariosView;
-
+import model.*;
+import UI.*;
 import javax.swing.*;
+
 public class RouteController {
-    private final JFrame mainFrame;
+    private final JFrame frame;
+    private final LoginModel loginModel;
+    private final UsuarioModel usuarioModel;
+    private final ClienteModel clienteModel;
 
-    //Constructor
-    public RouteController(JFrame frame){
-        this.mainFrame = frame;
+    public RouteController(JFrame frame) {
+        this.frame = frame;
+        this.loginModel = new LoginModel();
+        this.usuarioModel = new UsuarioModel();
+        this.clienteModel = new ClienteModel();
+        configurarFrame();
     }
-    public void mostrarLogin(){
-        LoginModel loginModel = new LoginModel();
-        LoginController loginController = new LoginController(this,loginModel);
-        LoginView view = new LoginView(loginController);
 
-        mainFrame.setContentPane(view);
-        mainFrame.revalidate();
-        mainFrame.repaint();
-
+    private void configurarFrame() {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
     }
+
+    public void mostrarLogin() {
+        LoginView vista = new LoginView();
+        new LoginController(this, loginModel, vista); // Pasamos la vista al controlador
+        cambiarVista(vista, 300, 400);
+    }
+
     public void mostrarMenu() {
-        MenuView view = new MenuView();
-
-        mainFrame.setContentPane(view);
-        mainFrame.revalidate();
-        mainFrame.repaint();
-        mainFrame.pack();
-        mainFrame.setLocationRelativeTo(null);
-
+        MenuView vista = new MenuView(this);
+        cambiarVista(vista, 800, 500);
     }
-    public void mostrarUsuarios(){
-        UsuariosView view = new UsuariosView();
-        UsuarioModel model = new UsuarioModel();
-        UsuariosController controller = new UsuariosController(model, view);
-        mainFrame.setContentPane(view);
-        mainFrame.revalidate();
-        mainFrame.repaint();
-        mainFrame.pack();
 
+    public void mostrarUsuarios() {
+        UsuariosView vista = new UsuariosView();
+        new UsuariosController(usuarioModel, vista, this);
+        cambiarVista(vista, 1000, 600);
+    }
+
+    public void mostrarClientes() {
+        ClientesView vista = new ClientesView();
+        new ClientesController(clienteModel, vista, this);
+        cambiarVista(vista, 1000, 600);
+    }
+
+    private void cambiarVista(JPanel vista, int ancho, int alto) {
+        frame.setContentPane(vista);
+        frame.setSize(ancho, alto);
+        frame.revalidate();
+        frame.repaint();
     }
 }
