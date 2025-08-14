@@ -21,6 +21,13 @@ public class UsuarioModel {
 
     public void eliminarUsuario (int id){
         usuarios.removeIf(user -> user.getId() == id);
+        reorganizarIDs();
+    }
+    private void reorganizarIDs(){
+        contadorID = 1;
+        for(Usuario user : usuarios){
+            user.setId(contadorID++);
+        }
     }
 
     public void actualizarUsuario(int id,String usuario, String contraseña){
